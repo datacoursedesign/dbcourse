@@ -2,7 +2,17 @@
 @{
     ViewBag.Title = "注册";
 }
-
+<script src="/Scripts/juqery-1.10.2.js"></script>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#register").click(function ()
+        {
+            $.post("Account/Register",
+                {})
+        });
+    })
+</script>
 <h2>@ViewBag.Title。</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -31,7 +41,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="注册" />
+            <button class="btn btn-primary" id="register">注册</button>
         </div>
     </div>
 }

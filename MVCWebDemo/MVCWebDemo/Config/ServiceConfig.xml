@@ -3,4 +3,7 @@
   <object id="InstructorService" type="MVCWebDemo.ServiceImpl.InstructorServiceImpl,MVCWebDemo">
     <property name="instructorDAO" ref="InstructorDAO"/>
   </object>
+  <object id="UsersService" type="MVCWebDemo.ServiceImpl.UsersServiceImpl,MVCWebDemo">
+    <property name="usersDAO" ref="UsersDAO"/>
+  </object>
 </objects>

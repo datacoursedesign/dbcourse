@@ -3,4 +3,7 @@
   <object id="InstructorDAO" type="MVCWebDemo.DAOImpl.InstructorDAOImpl,MVCWebDemo">
     <property name="factory" ref="SessionFactory"/>
   </object>
+  <object id="UsersDAO" type="MVCWebDemo.DAOImpl.UsersDAOImpl,MVCWebDemo">
+    <property name="factory" ref="SessionFactory"/>
+  </object>
 </objects>

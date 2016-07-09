@@ -11,7 +11,9 @@ using Microsoft.Owin.Security;
 using MVCWebDemo.Models;
 using System.Drawing;
 using System.IO;
-using System.Drawing.Imaging;  
+using System.Drawing.Imaging;
+using MVCWebDemo.Service;
+using System.Collections;
 
 namespace MVCWebDemo.Controllers
 {
@@ -19,6 +21,7 @@ namespace MVCWebDemo.Controllers
     //[Authorize]
     public class AccountController : Controller
     {
+        public UsersService usersService { set; get; }
         //public AccountController()
         //    : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
         //{
@@ -87,12 +90,26 @@ namespace MVCWebDemo.Controllers
         }
 
         //GET Account/Register
+        [HttpPost]
         public void Register()
         {
-            string u_name = Request.QueryString["u_name"];
-            string u_pwd = Request.QueryString["u_pwd"];
-            string u_phone = Request.QueryString["u_phone"];
-            string u_role = Request.QueryString["role"];
+        //    string u_name = ;
+        //    string u_pwd = Request.QueryString["u_pwd"];
+        //    string u_phone = ;
+        //    int u_role = int.Parse(Request.QueryString["role"]);
+            ArrayList info = new ArrayList();
+            info.Add(Request.QueryString["u_name"]);
+            info.Add(Request.QueryString["u_pwd"]);
+            info.Add(Request.QueryString["u_phone"]);
+            info.Add(Request.QueryString["role"]);
+            usersService.register(info);
+        }
+
+        //GET Account/RegisterForm
+        public ActionResult RegisterForm()
+        {
+            return View();
+            
         }
     }
 
