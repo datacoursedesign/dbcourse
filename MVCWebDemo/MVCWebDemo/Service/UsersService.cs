@@ -7,6 +7,10 @@ namespace MVCWebDemo.Service
 {
     public interface UsersService
     {
-        Boolean register(ArrayList info);
+        Boolean conflict(Dictionary<string, string> info);
+
+        Boolean register(Dictionary<string, string> info);
+
+        Boolean login(Dictionary<string, string> info);
     }
 }

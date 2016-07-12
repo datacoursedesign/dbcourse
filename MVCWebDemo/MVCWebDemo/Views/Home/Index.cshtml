@@ -20,6 +20,23 @@
             location.href = "/Account/RegisterForm";
             
         });
+        $("#login").click(function () {
+            $.post("/Account/Validate",
+                    { code: $("#code").val() },
+                    function (data) {
+                        if (data == "failed") {
+                            $("#error").css("visibility", "visible");
+                        }
+                        else {
+                            $("#error").css("visibility", "hidden");
+                        }
+                    });
+            $.post("/Account/Login",
+                        { name: $("#name").val(),  pwd: $("#pwd").val() },
+                        function (data) {
+                            alert(data);
+                        });
+        })
 
     });
 </script>
@@ -46,7 +63,7 @@
             <input type="text" id="validate" class="form-control" />
         </div>
         <div class="col-md-3 col-md-push-3">
-            <img style="height:50px;width:90px" src=/Account/CreateCodeImg id="codeImg" />
+            <img id="code" style="height:50px;width:90px" src="/Account/CreateCodeImg" />
         </div>
     </div>
     <div class="row">

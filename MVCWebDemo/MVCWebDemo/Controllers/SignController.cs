@@ -6,13 +6,25 @@ using System.Web.Mvc;
 
 namespace MVCWebDemo.Controllers
 {
-    public class AdminController : Controller
+    public class SignController : Controller
     {
         //
-        // GET: /Admin/
+        // GET: /Sign/
         public ActionResult Index()
         {
             return View();
         }
+
+        public void QuerySignState()
+        {
+
+        }
+
+        public void EditSignState()
+        {
+
+        }
+
+
 	}
 }

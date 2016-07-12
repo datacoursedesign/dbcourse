@@ -9,9 +9,9 @@ namespace MVCWebDemo.DAO
 {
     public interface UsersDAO
     {
-        IList<Users> getEntity(string hsql);
+        IList<Users> getEntity(Dictionary<string,string> info);
         Boolean updateEntity();
         Boolean deleteEntity();
-        Boolean insertEntity(ArrayList info);
+        Boolean insertEntity(Dictionary<string, string> info);
     }
 }

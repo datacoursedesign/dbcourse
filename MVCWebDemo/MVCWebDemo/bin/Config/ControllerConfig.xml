@@ -3,7 +3,7 @@
   <object id="InstructorController" type="MVCWebDemo.Controllers.InstructorController,MVCWebDemo">
     <property name="instructorService" ref="InstructorService"/>
   </object>
-  <object id="AccountController" type="MVCWebDemo.Controllers.AccountController,MVCWebDemo">
+  <object id="AccountController" type="MVCWebDemo.Controllers.AccountController,MVCWebDemo" singleton="false">
     <property name="usersService" ref="UsersService"/>
   </object>
 </objects>
